@@ -9,7 +9,7 @@
 3. インストール
    ```bash
    brew tap ken109/lcl
-   brew install ken109/lcl/lcl
+   brew install lcl
    ```
 
 4. DNSサーバーの先頭に127.0.0.1を追加する
