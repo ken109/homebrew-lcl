@@ -70,11 +70,11 @@ case $# in
             docker-compose down >/dev/null
             cd "$dir"
             ;;
-        *) echo "第二引数に start か stop を指定してください" ;;
+        *) usage ;;
         esac
         ;;
     *)
-        echo "第一引数に base か la か wp か dj を指定してください"
+        usage
         ;;
     esac
     ;;
@@ -90,7 +90,7 @@ case $# in
         frame="django"
         ;;
     *)
-        echo "第一引数に base か la か wp か dj を指定してください"
+        usage
         exit 2
         ;;
     esac
@@ -112,7 +112,7 @@ case $# in
     "staging")
         "staging-non-git-$2" "$3"
         ;;
-    *) echo "第二引数に start か stop を指定してください" ;;
+    *) usage ;;
     esac
     ;;
 *) usage ;;
