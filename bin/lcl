@@ -58,14 +58,14 @@ case $# in
         case $2 in
         "start")
             dir=$(pwd)
-            cd "$(brew --prefix)/etc/compose/base"
+            cd "$(brew --prefix)/etc/lcl/base"
             echo "起動中..."
             docker-compose up -d >/dev/null
             cd "$dir"
             ;;
         "stop")
             dir=$(pwd)
-            cd "$(brew --prefix)/etc/compose/base"
+            cd "$(brew --prefix)/etc/lcl/base"
             echo "停止中..."
             docker-compose down >/dev/null
             cd "$dir"
@@ -98,15 +98,15 @@ case $# in
     case $2 in
     "start")
         echo "起動中..."
-        cp "$(brew --prefix)/etc/compose/$frame.yml" ./docker-compose.yml
+        cp "$(brew --prefix)/etc/lcl/$frame.yml" ./docker-compose.yml
         sed -i '' -e "s/APP_NAME/$3/" ./docker-compose.yml
-        mysql --defaults-extra-file="$(brew --prefix)/mysql.conf" -h 127.0.0.1 -e "CREATE DATABASE IF NOT EXISTS \`$3\`;"
+        mysql --defaults-extra-file="$(brew --prefix)/etc/lcl/mysql.conf" -h 127.0.0.1 -e "CREATE DATABASE IF NOT EXISTS \`$3\`;"
         docker-compose up -d
         echo "URL：http://$3/"
         ;;
     "stop")
         echo "停止中..."
-        mysql --defaults-extra-file="$(brew --prefix)/mysql.conf" -h 127.0.0.1 -e "DROP DATABASE IF EXISTS \`$3\`;"
+        mysql --defaults-extra-file="$(brew --prefix)/etc/lcl/mysql.conf" -h 127.0.0.1 -e "DROP DATABASE IF EXISTS \`$3\`;"
         docker-compose down
         ;;
     "staging")
