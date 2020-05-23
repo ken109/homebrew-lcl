@@ -27,6 +27,18 @@ services:
       MYSQL_ROOT_PASSWORD: password
     restart: always
 
+  mysql5:
+    image: mysql
+    container_name: mysql
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./mysql:/docker-entrypoint-initdb.d
+      - mysql/:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    restart: always
+
   redis:
     image: redis
     container_name: redis
