@@ -6,13 +6,14 @@ services:
     ports:
       - '53:53/udp'
     restart: always
-
+  
   nginx-proxy:
     image: jwilder/nginx-proxy
     container_name: nginx-proxy
     ports:
       - "80:80"
     volumes:
+      - ./proxy:/etc/nginx/vhost.d
       - /var/run/docker.sock:/tmp/docker.sock:ro
 
   mysql:
@@ -28,13 +29,13 @@ services:
     restart: always
 
   mysql5:
-    image: mysql
-    container_name: mysql
+    image: mysql:5
+    container_name: mysql5
     ports:
-      - '3306:3306'
+      - '33065:3306'
     volumes:
       - ./mysql:/docker-entrypoint-initdb.d
-      - mysql/:/var/lib/mysql
+      - mysql5/:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
     restart: always
@@ -53,4 +54,6 @@ networks:
 
 volumes:
   mysql:
+    external: true
+  mysql5:
     external: true
