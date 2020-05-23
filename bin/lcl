@@ -4,7 +4,7 @@ set -eu
 
 function usage() {
     echo "使い方："
-    echo "  loc <種類> <アクション> <プロジェクト名(la, wp, dj時)>"
+    echo "  lcl <種類> <アクション> <プロジェクト名(la, wp, dj時)>"
     echo ""
     echo "種類："
     echo "  base: Nginx, MySQL"
