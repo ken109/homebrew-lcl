@@ -5,6 +5,8 @@ services:
     container_name: dns
     ports:
       - '53:53/udp'
+    volumes:
+      - ./hosts.txt:/usr/src/app/hosts.txt
     restart: always
   
   nginx-proxy:
@@ -15,6 +17,7 @@ services:
     volumes:
       - ./proxy:/etc/nginx/vhost.d
       - /var/run/docker.sock:/tmp/docker.sock:ro
+    restart: always
 
   mysql:
     image: mysql
