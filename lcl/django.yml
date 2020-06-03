@@ -1,6 +1,6 @@
 version: '3'
 services:
-  django:
+  APP_NAME:
     image: ken109/django
     restart: always
     container_name: APP_NAME

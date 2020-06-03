@@ -1,6 +1,6 @@
 version: '3'
 services:
-  laravel:
+  APP_NAME:
     image: ken109/laravel
     restart: always
     container_name: APP_NAME

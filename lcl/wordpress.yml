@@ -1,6 +1,6 @@
 version: '3'
 services:
-  wordpress:
+  APP_NAME:
     image: wordpress
     restart: always
     container_name: APP_NAME
