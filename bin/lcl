@@ -36,7 +36,7 @@ function staging-non-git-wp() {
     scp "$1.tar.gz" "$connection":~/.tmp
 
     echo "処理中..."
-    echo new-w "$1" | ssh -t "$2" >/dev/null 2>&1
+    echo new-w "$1" | ssh -t "$connection" >/dev/null 2>&1
 
     rm "$1.tar.gz"
 
