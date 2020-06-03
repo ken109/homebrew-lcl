@@ -6,10 +6,12 @@
    ```
 2. Dockerを起動する
 
-3. インストール
+3. Dockerの`File Sharing`に`/usr/local/etc`を追加する
+
+4. インストール
    ```bash
    brew tap ken109/lcl
    brew install lcl
    ```
 
-4. DNSサーバーの先頭に127.0.0.1を追加する
+5. DNSサーバーの先頭に127.0.0.1を追加する
