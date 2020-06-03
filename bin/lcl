@@ -29,6 +29,10 @@ function staging-non-git-wp() {
     echo "例：ssh example の場合 example と入力"
     read -p "SSH接続情報：" connection
 
+    if [ -f "$1.tar.gz" ]; then
+        rm "$1.tar.gz"
+    fi
+
     echo "圧縮中..."
     tar acf "$1.tar.gz" ./* >/dev/null
 
