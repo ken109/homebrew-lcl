@@ -108,7 +108,7 @@ case $# in
         host=$3.$(echo "$ip" | cut -d '.' -f 3)$(echo "$ip" | cut -d '.' -f 4)
         sed -i '' -e "s/HOST_NAME/$host/" ./docker-compose.yml
         mysql --defaults-extra-file="$(brew --prefix)/etc/lcl/mysql.conf" -h 127.0.0.1 -e "CREATE DATABASE IF NOT EXISTS \`$3\`;"
-        docker-compose up -d
+        docker-compose up -d --remove-orphans
         echo "URL：http://$host/"
         ;;
     "stop")
