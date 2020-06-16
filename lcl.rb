@@ -1,8 +1,8 @@
 class Lcl < Formula
   desc ""
   homepage ""
-  url "https://github.com/ken109/homebrew-lcl/archive/0.1.9.tar.gz"
-  sha256 "6ee25a29eceffe5ff7f4d4222d83a601f57c379f64e3d2e1e6fbdfd9550894cf"
+  url "https://github.com/ken109/homebrew-lcl/archive/0.2.0.tar.gz"
+  sha256 "4c1205624937b902a85f548d2a24c37b19325c8b5dc760e5f24f9019a1aaad84"
 
   def install
       bin.install "bin/lcl"
