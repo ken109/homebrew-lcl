@@ -7,7 +7,7 @@ services:
     expose:
       - '80'
     environment:
-      VIRTUAL_HOST: APP_NAME
+      VIRTUAL_HOST: HOST_NAME
       DJANGO_NAME: APP_NAME
       DJANGO_DB_HOST: host.docker.internal
       DJANGO_DB_USER: sha2
