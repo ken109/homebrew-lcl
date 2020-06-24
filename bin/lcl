@@ -112,8 +112,11 @@ case $# in
         echo "URL：http://$host/"
         ;;
     "stop")
+        read -p "DBを削除しますか？[y,n]:" db
         echo "停止中..."
-        mysql --defaults-extra-file="$(brew --prefix)/etc/lcl/mysql.conf" -h 127.0.0.1 -e "DROP DATABASE IF EXISTS \`$3\`;"
+        if [ "$db" = 'y' ]; then
+            mysql --defaults-extra-file="$(brew --prefix)/etc/lcl/mysql.conf" -h 127.0.0.1 -e "DROP DATABASE IF EXISTS \`$3\`;"
+        fi
         docker-compose down
         ;;
     "staging")
