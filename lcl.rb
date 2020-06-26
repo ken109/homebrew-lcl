@@ -4,6 +4,8 @@ class Lcl < Formula
   url "https://github.com/ken109/lcl/archive/1.0.0.tar.gz"
   sha256 "72d698aff352e8f97bc86e426cba5e1844acfa578b490d28044f3cd6983bdde8"
 
+  depends_on "go" => :build
+
   def install
     ENV["GOPATH"] = buildpath
     lcl_path = buildpath/"src/github.com/ken109/lcl/"
