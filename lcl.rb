@@ -6,7 +6,7 @@ class Lcl < Formula
 
   def install
     ENV["GOPATH"] = buildpath
-    ENV["GO111MODULE"] = true
+    ENV["GO111MODULE"] = "on"
     lcl_path = buildpath/"src/github.com/ken109/lcl/"
     lcl_path.install buildpath.children
 
