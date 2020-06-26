@@ -7,7 +7,7 @@ class Lcl < Formula
   depends_on "go" => :build
 
   def install
-    etc.install Dir["etc"] => "lcl"
+    etc.install Dir["etc"] => Dir["lcl"]
 
     ENV["GOPATH"] = buildpath
     lcl_path = buildpath/"src/github.com/ken109/lcl/"
