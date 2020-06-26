@@ -7,6 +7,8 @@ class Lcl < Formula
   depends_on "go" => :build
 
   def install
+    etc.install Dir["etc"]
+
     ENV["GOPATH"] = buildpath
     lcl_path = buildpath/"src/github.com/ken109/lcl/"
     lcl_path.install buildpath.children
@@ -16,8 +18,6 @@ class Lcl < Formula
       system "go", "build"
       bin.install "lcl"
     end
-
-    etc.install Dir["etc"]
   end
 
   test do
