@@ -1,8 +1,8 @@
 class Lcl < Formula
   desc "Build local environment"
   homepage "https://github.com/ken109/lcl"
-  url "https://github.com/ken109/lcl/archive/1.2.3.tar.gz"
-  sha256 "9dbd7ddbec7fb05eaf984f774cd771a1aac3f301c6447d9add04a4aaecf6c7f3"
+  url "https://github.com/ken109/lcl/archive/1.2.4.tar.gz"
+  sha256 "2ae769683f94699a5a8f405e5e9046fcf398004ac52203dacc0cd77084903d6f"
 
   depends_on "go" => :build
 
