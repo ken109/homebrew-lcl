@@ -10,7 +10,7 @@
 
 4. インストール
    ```bash
-   brew tap ken109/lcl
+   brew tap ken109/tap
    brew install lcl
    ```
 
