@@ -1,8 +1,8 @@
 class Srv < Formula
   desc "Build staging environment"
   homepage "https://github.com/ken109/srv"
-  url "https://github.com/ken109/srv/archive/1.0.1.tar.gz"
-  sha256 "cfac484ab06ee4139d2758c2e4a32a4ce15ea7fe395d6993bf35c28285ed1c72"
+  url "https://github.com/ken109/srv/archive/1.0.2.tar.gz"
+  sha256 "7fa5373a8bb23d5a1f5f8282f5165db446176f4272d22b620180e2033c90a9bd"
 
   depends_on "go" => :build
 
